@@ -1,0 +1,37 @@
+two sum question
+enumerate() 函数用于将一个可遍历的数据对象(如列表、元组或字符串)组合为一个索引序列，同时列出数据和数据下标，一般用在 for 循环当中。
+
+ex1 暴力方法
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        """check the list if the list isn't null
+        and use for loop if [i] + [j] = target
+        print"""
+        n = len(nums)
+        for i in range(n):
+            for j in range(i+1, n):
+                if nums[i] + nums[j] == target:
+                    return [i,j]
+
+ex2 
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        """hashmap mathed
+        not very fimiliar with it
+        """
+        hashmap = {} """by using hash table, it reduced the running time O(n) to O(1)"""
+        for i, num in enumerate(nums): """"i might be the place and the num is the num// enumerate is making the list with the number and 坐标，数据和数据的位置"""
+            if target - num in hashmap:   """a+b =c.  c-a = b so if b in the new list. """
+                return [hashmap[target - num], i]
+            else:
+                hashmap[num] = i
